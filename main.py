@@ -8,7 +8,7 @@ def send_email(occasion, custom_message):
     # These are pulled safely from GitHub Secrets
     SENDER_EMAIL = "cam.iphone170124@gmail.com"
     RECIEVER_EMAIL = "27.prachisingh@gmail.com"
-    APP_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+    APP_PASSWORD = str(os.environ.get('EMAIL_PASSWORD')).strip()
     
     msg = EmailMessage()
     msg['Subject'] = f"Diet Reminder: {occasion}"
