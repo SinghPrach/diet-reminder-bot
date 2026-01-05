@@ -1,7 +1,7 @@
 name: Send Diet Reminder
 on:
   schedule:
-    - cron: '30 2 * * *' # Runs at 8:00 AM IST
+    - cron: '30 5 * * *' # (The 30 is minutes, and 5 is the hour in UTC. $11:00 - 5:30 = 5:30$)
   workflow_dispatch:      # This gives you a "Manual Play" button!
 jobs:
   build:
