@@ -6,13 +6,14 @@ from email.message import EmailMessage
 
 def send_email(occasion, custom_message):
     # These are pulled safely from GitHub Secrets
-    SENDER_EMAIL = "your-email@gmail.com" 
+    SENDER_EMAIL = "cam.iphone170124@gmail.com"
+    RECIEVER_EMAIL = "27.prachisingh@gmail.com"
     APP_PASSWORD = os.environ.get('EMAIL_PASSWORD')
     
     msg = EmailMessage()
     msg['Subject'] = f"Diet Reminder: {occasion}"
     msg['From'] = SENDER_EMAIL
-    msg['To'] = SENDER_EMAIL
+    msg['To'] = RECIEVER_EMAIL
     msg.set_content(custom_message)
 
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
